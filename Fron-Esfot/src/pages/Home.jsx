@@ -8,6 +8,13 @@ export const Home = () => {
         }
     };
 
+    const scrollToContact = () => {
+        const contactSection = document.getElementById('contact-section'); 
+        if (contactSection) {
+            contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } 
+    };
+
     return (
         <>
             <header className="fixed top-0 left-0 w-full bg-white shadow-md z-50 h-16 flex justify-between items-center px-6">
@@ -17,7 +24,7 @@ export const Home = () => {
                 <ul className="flex gap-5 justify-center my-4 flex-wrap">
                     <li><a href="#" className='font-bold hover:text-sky-500 hover:underline text-blue-800'>HOGAR</a></li>
                     <li><button onClick={scrollToMap} className='font-bold hover:text-sky-500 hover:underline text-blue-800'>MAPA</button></li>
-                    <li><a href="#" className='font-bold hover:text-sky-500 hover:underline text-blue-800'>CONTACTO</a></li>
+                    <li><button onClick={scrollToContact} className='font-bold hover:text-sky-500 hover:underline text-blue-800'>CONTACTO</button></li>
                 </ul>
                 <ul className="flex justify-center items-center gap-4 my-4">
                     <li><Link to="/Login" className="bg-red-700 text-white px-6 py-2 rounded-xl shadow-md hover:bg-red-800 hover:scale-105 transition-transform duration-200">Iniciar Sesión</Link></li>
@@ -128,7 +135,7 @@ export const Home = () => {
                     </div>
                 </section>
 
-                <footer className="bg-gray-900 text-white mt-20 ">
+                <footer className="bg-gray-900 text-white mt-20 " id="contact-section">
                     <div className="max-w-7xl mx-auto px-4 py-12">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-100 mb-8">
 
